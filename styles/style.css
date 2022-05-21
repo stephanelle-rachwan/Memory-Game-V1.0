@@ -1,5 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500&display=swap');
+
 body {
   background-color: #0f1833;
+}
+
+#title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+#squares{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#row-1 {
+  display: flex;
+  margin-bottom: 20px;
 }
 
 #square-1 {
@@ -16,6 +42,14 @@ body {
   background-color: red;
   border: 7px solid #000;
   border-radius: 20px;
+}
+
+.space {
+  padding: 20px;
+}
+
+#row-2 {
+  display: flex;
 }
 
 #square-3 {
