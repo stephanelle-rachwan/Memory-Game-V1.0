@@ -1,5 +1,6 @@
 // Initializing an array to store the sequence
 var program_sequence = []
+var our_sequence = []
 
 // Importing Sounds
 var blue_audio = new Audio("./assets/sounds/blue.mp3");
@@ -75,8 +76,33 @@ function generateRandomIntegerInRange() {
 
 // We create a fct that uses the playSound and changeColor fcts, randomly
 function sequenceWork (){
-  program_sequence.push(generateRandomIntegerInRange());
+  rand=generateRandomIntegerInRange();
+  program_sequence.push(rand);
   playSound(program_sequence[program_sequence.length-1]);
 }
 
-// We make the game work upon clicking anywhere 
+// We make the game work upon clicking anywhere and change the title to level 1
+// to make it work once, used {once:true} https://dev.to/js_bits_bill/addeventlistener-once-js-bits-565d
+document.getElementById("body").addEventListener("click",function(){
+  sequenceWork();
+  changeTitle(); 
+},{once:true})
+function changeTitle (){
+  document.getElementById("title").innerHTML = "Level 1";
+}
+
+// Fill our sequence (our_sequence) with the squares we press on
+function compare (element_clicked) {
+  our_sequence.push(element_clicked);
+  if (our_sequence[our_sequence.length-1] == program_sequence[our_sequence.length-1]) {
+    executeGame();
+  }
+  else {
+    gameOver();
+  }
+}
+
+document.getElementById("green_square").addEventListener("click",function(){compare(1)});
+document.getElementById("red_square").addEventListener("click",function(){compare(2)});
+document.getElementById("yellow_square").addEventListener("click",function(){compare(3)});
+document.getElementById("blue_square").addEventListener("click",function(){compare(4)});
