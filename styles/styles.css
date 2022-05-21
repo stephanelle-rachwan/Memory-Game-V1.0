@@ -13,22 +13,21 @@ body {
   margin-bottom: 50px;
 }
 
-#squares{
+#squares {
   margin: auto;
   width: 50%;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-#row-1 {
+#first_row {
   display: flex;
   margin-bottom: 20px;
 }
 
-#square-1 {
+#green_square {
   height: 120px;
   width: 120px;
   background-color: green;
@@ -36,7 +35,7 @@ body {
   border-radius: 20px;
 }
 
-#square-2 {
+#red_square {
   height: 120px;
   width: 120px;
   background-color: red;
@@ -48,11 +47,11 @@ body {
   padding: 20px;
 }
 
-#row-2 {
+#second_row {
   display: flex;
 }
 
-#square-3 {
+#yellow_square {
   height: 120px;
   width: 120px;
   background-color: yellow;
@@ -60,7 +59,7 @@ body {
   border-radius: 20px;
 }
 
-#square-4 {
+#blue_square {
   height: 120px;
   width: 120px;
   background-color: blue;
