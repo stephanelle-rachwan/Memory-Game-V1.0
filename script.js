@@ -1,3 +1,6 @@
+// Initializing an array to store the sequence
+var program_sequence = []
+
 // Importing Sounds
 var blue_audio = new Audio("./assets/sounds/blue.mp3");
 var green_audio = new Audio("./assets/sounds/green.mp3");
@@ -71,3 +74,9 @@ function generateRandomIntegerInRange() {
 }
 
 // We create a fct that uses the playSound and changeColor fcts, randomly
+function sequenceWork (){
+  program_sequence.push(generateRandomIntegerInRange());
+  playSound(program_sequence[program_sequence.length-1]);
+}
+
+// We make the game work upon clicking anywhere 
