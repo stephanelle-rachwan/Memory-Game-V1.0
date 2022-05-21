@@ -63,3 +63,11 @@ function changeColor(x) {
       break;
   }
 }
+
+// Generate a random number between 1 and 4, including both 1 and 4
+// Fct taken from https://www.udacity.com/blog/2021/04/javascript-random-numbers.html#:~:text=Generating%20Javascript%20Random%20Numbers,it%20will%20never%20be%201.
+function generateRandomIntegerInRange() {
+  return Math.floor(Math.random() * (4)) + 1;
+}
+
+// We create a fct that uses the playSound and changeColor fcts, randomly
