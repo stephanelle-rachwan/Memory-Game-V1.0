@@ -1,0 +1,35 @@
+body {
+  background-color: #0f1833;
+}
+
+#square-1 {
+  height: 120px;
+  width: 120px;
+  background-color: green;
+  border: 7px solid #000;
+  border-radius: 20px;
+}
+
+#square-2 {
+  height: 120px;
+  width: 120px;
+  background-color: red;
+  border: 7px solid #000;
+  border-radius: 20px;
+}
+
+#square-3 {
+  height: 120px;
+  width: 120px;
+  background-color: yellow;
+  border: 7px solid #000;
+  border-radius: 20px;
+}
+
+#square-4 {
+  height: 120px;
+  width: 120px;
+  background-color: blue;
+  border: 7px solid #000;
+  border-radius: 20px;
+}
