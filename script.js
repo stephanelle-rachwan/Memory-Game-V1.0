@@ -106,3 +106,21 @@ document.getElementById("green_square").addEventListener("click",function(){comp
 document.getElementById("red_square").addEventListener("click",function(){compare(2)});
 document.getElementById("yellow_square").addEventListener("click",function(){compare(3)});
 document.getElementById("blue_square").addEventListener("click",function(){compare(4)});
+
+// Create function executeGame to go on with the game
+function executeGame(){
+  // as long as length[our_sequence] == length[program_sequence] ; continue
+  // we should make l program click 3a gher ra2em, length[program_sequence] = number tb3 l level
+  // we change the title accordingly
+  }
+  
+// Create function gameOver when we lose to do the required changes
+function gameOver() {
+  console.log("difndi")
+  document.getElementById("title").innerHTML = "Game Over, Press Any Key to Restart";
+  wrong_audio.play();
+  document.getElementById("body").style.backgroundColor = "red";
+  setTimeout(() => {
+    document.getElementById("body").style.backgroundColor = "#0f1833";
+  }, 200)
+}
