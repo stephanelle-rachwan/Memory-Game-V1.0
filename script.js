@@ -36,6 +36,7 @@ function playSound(x) {
       break;
   }
 }
+
 // Function that changes the color to white then to the original color after 2ms
 function changeColor(x) {
   switch (x) {
@@ -74,53 +75,25 @@ function generateRandomIntegerInRange() {
   return Math.floor(Math.random() * (4)) + 1;
 }
 
-// We create a fct that uses the playSound and changeColor fcts, randomly
-function sequenceWork (){
-  rand=generateRandomIntegerInRange();
-  program_sequence.push(rand);
-  playSound(program_sequence[program_sequence.length-1]);
-}
-
-// We make the game work upon clicking anywhere and change the title to level 1
-// to make it work once, used {once:true} https://dev.to/js_bits_bill/addeventlistener-once-js-bits-565d
-document.getElementById("body").addEventListener("click",function(){
-  sequenceWork();
-  changeTitle(); 
-},{once:true})
-function changeTitle (){
-  document.getElementById("title").innerHTML = "Level 1";
-}
-
-// Fill our sequence (our_sequence) with the squares we press on
-function compare (element_clicked) {
-  our_sequence.push(element_clicked);
+// Function thats compares between the last click we perform
+function sequenceDifferentiate (element_clicked) {
   if (our_sequence[our_sequence.length-1] == program_sequence[our_sequence.length-1]) {
-    executeGame();
+    console.log(program_sequence,our_sequence)
+      return true;
   }
   else {
     gameOver();
   }
 }
-
-document.getElementById("green_square").addEventListener("click",function(){compare(1)});
-document.getElementById("red_square").addEventListener("click",function(){compare(2)});
-document.getElementById("yellow_square").addEventListener("click",function(){compare(3)});
-document.getElementById("blue_square").addEventListener("click",function(){compare(4)});
-
-// Create function executeGame to go on with the game
-function executeGame(){
-  // as long as length[our_sequence] == length[program_sequence] ; continue
-  // we should make l program click 3a gher ra2em, length[program_sequence] = number tb3 l level
-  // we change the title accordingly
-  }
   
 // Create function gameOver when we lose to do the required changes
 function gameOver() {
-  console.log("difndi")
   document.getElementById("title").innerHTML = "Game Over, Press Any Key to Restart";
   wrong_audio.play();
   document.getElementById("body").style.backgroundColor = "red";
   setTimeout(() => {
     document.getElementById("body").style.backgroundColor = "#0f1833";
   }, 200)
+  // Adding a timeout so that it differentiate between the last wrong click and the restart click 
+  setTimeout(document.getElementById('body').addEventListener("click",function(){location.reload()},1000))
 }
