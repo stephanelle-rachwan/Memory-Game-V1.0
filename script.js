@@ -1,5 +1,5 @@
 // Initializing an array to store the sequence
-var program_sequence = []
+var program_sequence = [generateRandomIntegerInRange()]
 var our_sequence = []
 
 // Importing Sounds
