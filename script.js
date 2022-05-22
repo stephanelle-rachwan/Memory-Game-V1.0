@@ -97,3 +97,36 @@ function gameOver() {
   // Adding a timeout so that it differentiate between the last wrong click and the restart click 
   setTimeout(document.getElementById('body').addEventListener("click",function(){location.reload()},1000))
 }
+
+// The main function connecting the program all together
+function Start(){
+  // Playing the new sound of the last index/btn
+  setTimeout(playSound(program_sequence[program_sequence.length-1]),1000)
+      function start(x){
+        if (!x){return;}
+        our_sequence.push(x);
+        // console.log(our_sequence,program_sequence)
+        x=sequenceDifferentiate()
+        if (our_sequence.length==program_sequence.length){
+              rand=generateRandomIntegerInRange()
+              our_sequence=[]
+              program_sequence.push(generateRandomIntegerInRange())
+              setTimeout(function(){playSound(program_sequence[program_sequence.length-1])},500)
+              document.getElementById("title").innerHTML=`Level ${program_sequence.length}`
+              return;   
+          } 
+      }
+    
+    document.getElementById('red_square').addEventListener("click",function (){start(2)},console.log(our_sequence,program_sequence));
+    document.getElementById('yellow_square').addEventListener("click",function (){start(3),console.log(our_sequence,program_sequence)});
+    document.getElementById('blue_square').addEventListener("click",function (){start(4),console.log(our_sequence,program_sequence)});
+    document.getElementById('green_square').addEventListener("click",function (){start(1),console.log(our_sequence,program_sequence)});
+  start();
+}
+
+// We make the game work upon clicking anywhere and change the title to level 1
+document.getElementById("body").addEventListener("click",function(){
+  document.getElementById("title").innerHTML=`Level ${program_sequence.length}`;
+  Start();
+} // to make it work once, used {once:true} https://dev.to/js_bits_bill/addeventlistener-once-js-bits-565d
+,{once:true})
