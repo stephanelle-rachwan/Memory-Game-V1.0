@@ -17,7 +17,7 @@ document.getElementById("blue_square").addEventListener("click", function(){play
 
 // Function to play the desired sound
 function playSound(x) {
-  switch (x) {
+  switch(x) {
     case 1:
       green_audio.play();
       changeColor(1);
@@ -34,7 +34,8 @@ function playSound(x) {
       blue_audio.play();
       changeColor(4);
       break;
-  }
+
+}
 }
 
 // Function that changes the color to white then to the original color after 2ms
@@ -92,8 +93,8 @@ function gameOver() {
   wrong_audio.play();
   document.getElementById("body").style.backgroundColor = "red";
   setTimeout(() => {
-    document.getElementById("body").style.backgroundColor = "#0f1833";
-  }, 200)
+    document.getElementById("body").style.backgroundColor = "#0f1833"}
+    , 200)
   // Adding a timeout so that it differentiate between the last wrong click and the restart click 
   setTimeout(document.getElementById('body').addEventListener("click",function(){location.reload()},1000))
 }
@@ -107,16 +108,18 @@ function Start(){
         our_sequence.push(x);
         // console.log(our_sequence,program_sequence)
         x=sequenceDifferentiate()
+          if (!x){
+            gameOver()
+            return;} 
         if (our_sequence.length==program_sequence.length){
               rand=generateRandomIntegerInRange()
               our_sequence=[]
               program_sequence.push(generateRandomIntegerInRange())
               setTimeout(function(){playSound(program_sequence[program_sequence.length-1])},500)
               document.getElementById("title").innerHTML=`Level ${program_sequence.length}`
-              return;   
-          } 
-      }
-    
+              return;     
+          }  
+            }  
     document.getElementById('red_square').addEventListener("click",function (){start(2)},console.log(our_sequence,program_sequence));
     document.getElementById('yellow_square').addEventListener("click",function (){start(3),console.log(our_sequence,program_sequence)});
     document.getElementById('blue_square').addEventListener("click",function (){start(4),console.log(our_sequence,program_sequence)});
